@@ -45,7 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\playerBulletMovement.cs" />
+     <Compile Include="Assets\Scripts\DestroyEnemy.cs" />
+     <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
+     <Compile Include="Assets\Scripts\Stage1Boss.cs" />
+     <Compile Include="Assets\Scripts\Stage1BossBullet.cs" />
+     <Compile Include="Assets\Scripts\bulletMovement.cs" />
+     <Compile Include="Assets\Scripts\enemyBulletPool.cs" />
+     <Compile Include="Assets\Scripts\enemyHealth.cs" />
+     <Compile Include="Assets\Scripts\fpsCounter.cs" />
+     <Compile Include="Assets\Scripts\killBox.cs" />
+     <Compile Include="Assets\Scripts\killBullet.cs" />
+     <Compile Include="Assets\Scripts\playerBulletPool.cs" />
      <Compile Include="Assets\Scripts\playerControls.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
