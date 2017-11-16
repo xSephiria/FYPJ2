@@ -12,19 +12,19 @@ public class Stage1BossBullet : MonoBehaviour {
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            //if (count)
-            //{
-            //    circlePattern(30, "red");
-            //    count = false;
-            //}
-            //else
-            //{
-            //    circlePattern(30, "blue");
-            //    count = true;
-            //}
+            if (count)
+            {
+                circlePattern(30, "red");
+                count = false;
+            }
+            else
+            {
+                circlePattern(30, "blue");
+                count = true;
+            }
 
-            sineWave(3, 2, false, "red");
-            sineWave(3, 2, true, "blue");
+            //sineWave(3, 2, false, "red");
+            //sineWave(3, 2, true, "blue");
         }
     }
 
