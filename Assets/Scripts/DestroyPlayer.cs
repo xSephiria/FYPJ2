@@ -7,7 +7,7 @@ public class DestroyPlayer : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             gameObject.SetActive(false);
         }
     }

@@ -4,8 +4,8 @@ using System.Collections;
 public class playerControls : MonoBehaviour {
 
     float speed;
-    const float normalSpeed = 30;
-    const float concentrateSpeed = 15;
+    const float normalSpeed = 35;
+    const float concentrateSpeed = 20;
     [Header("Movement Boundaries")]
     public float minX;
     public float minY;
@@ -63,32 +63,42 @@ public class playerControls : MonoBehaviour {
 
     void arcShot()
     {
-        GameObject obj = playerBulletPool.Current.GetPooledObject();
-        if (obj == null)
-            return;
-        obj.transform.position = new Vector2(0.7f + playerBulletSpawn.position.x, playerBulletSpawn.position.y);
-        obj.transform.rotation = Quaternion.Euler(0, 0, -30);
-        obj.SetActive(true);
-        obj.gameObject.GetComponent<bulletMovement>().movementMode = 1;
+        //GameObject obj = playerBulletPool.Current.GetPooledObject();
+        //if (obj == null)
+        //    return;
+        //obj.transform.position = new Vector2(0.7f + playerBulletSpawn.position.x, playerBulletSpawn.position.y);
+        //obj.transform.rotation = Quaternion.Euler(0, 0, -30);
+        //obj.SetActive(true);
+        //obj.gameObject.GetComponent<bulletMovement>().movementMode = 1;
 
-        obj = playerBulletPool.Current.GetPooledObject();
-        if (obj == null)
-            return;
-        obj.transform.position = new Vector2(-0.7f + playerBulletSpawn.position.x, playerBulletSpawn.position.y);
-        obj.transform.rotation = Quaternion.Euler(0, 0, 30);
-        obj.SetActive(true);
-        obj.gameObject.GetComponent<bulletMovement>().movementMode = 1;
+        //obj = playerBulletPool.Current.GetPooledObject();
+        //if (obj == null)
+        //    return;
+        //obj.transform.position = new Vector2(-0.7f + playerBulletSpawn.position.x, playerBulletSpawn.position.y);
+        //obj.transform.rotation = Quaternion.Euler(0, 0, 30);
+        //obj.SetActive(true);
+        //obj.gameObject.GetComponent<bulletMovement>().movementMode = 1;
         
-        for (int i = -1; i < 2; i++)
-        {
-            obj = playerBulletPool.Current.GetPooledObject();
+        //for (int i = -1; i < 2; i++)
+        //{
+        //    obj = playerBulletPool.Current.GetPooledObject();
 
+        //    if (obj == null)
+        //        return;
+        //    obj.transform.position = new Vector2(0.35f * i + playerBulletSpawn.position.x, playerBulletSpawn.position.y);
+        //    obj.transform.rotation = playerBulletSpawn.rotation;
+        //    obj.SetActive(true);
+
+        //    obj.gameObject.GetComponent<bulletMovement>().movementMode = 1;
+        //}
+        for (int i = -2; i < 3; i++)
+        {
+            GameObject obj = playerBulletPool.Current.GetPooledObject();
             if (obj == null)
                 return;
             obj.transform.position = new Vector2(0.35f * i + playerBulletSpawn.position.x, playerBulletSpawn.position.y);
-            obj.transform.rotation = playerBulletSpawn.rotation;
+            obj.transform.rotation = Quaternion.Euler(0, 0, -10 * i);
             obj.SetActive(true);
-
             obj.gameObject.GetComponent<bulletMovement>().movementMode = 1;
         }
     }

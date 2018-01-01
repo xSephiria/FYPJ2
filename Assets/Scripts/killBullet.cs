@@ -3,9 +3,10 @@ using System.Collections;
 
 public class killBullet : MonoBehaviour {
 
+    public float activeTime = 2.5f; // time the bullet will last before disappearing
     void OnEnable()
     {
-        Invoke("Destroy", 2.5f);
+        Invoke("Destroy", activeTime);
     }
 
     void Destroy()

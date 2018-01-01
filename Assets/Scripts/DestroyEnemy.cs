@@ -11,7 +11,6 @@ public class DestroyEnemy : MonoBehaviour {
         {
             other.GetComponent<enemyHealth>().HP -= bulletDamage;
             gameObject.SetActive(false);
-            Debug.Log(other.GetComponent<enemyHealth>().HP);
         }
     }
 }

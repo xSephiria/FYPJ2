@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Stage1Boss : MonoBehaviour {
+public class moveAlongWaypoint : MonoBehaviour {
 
     public Transform[] Waypoints;
     public float movementSpeed;
