@@ -7,7 +7,13 @@ public class DestroyPlayer : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            //Destroy(other.gameObject);
+            if (playerInfo.Current.iFrameTimer <= 0)
+            {
+                other.gameObject.SetActive(false);
+                playerInfo.Current.remainingLives -= 1;
+                playerInfo.Current.isDead = true;
+                playerInfo.Current.iFrameTimer = playerInfo.Current.invunerableTime;
+            }
             gameObject.SetActive(false);
         }
     }

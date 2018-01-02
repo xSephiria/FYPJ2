@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\fpsCounter.cs" />
      <Compile Include="Assets\Scripts\killBox.cs" />
      <Compile Include="Assets\Scripts\killBullet.cs" />
+     <Compile Include="Assets\Scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\moveAlongWaypoint.cs" />
      <Compile Include="Assets\Scripts\playerBulletPool.cs" />
      <Compile Include="Assets\Scripts\playerControls.cs" />

@@ -9,10 +9,13 @@ public class enemyHealth : MonoBehaviour {
         if (HP <= 0)
         {
             gameObject.SetActive(false);
-            if (GetComponentInParent<GameObject>().name == "Boss")
+            if (gameObject.name == "Boss")
                 playerInfo.Current.playerScore += 1000;
             else
+            {
                 playerInfo.Current.playerScore += 100;
+                playerInfo.Current.enemiesKilledInStage += 1;
+            }
             return;
         }
     }

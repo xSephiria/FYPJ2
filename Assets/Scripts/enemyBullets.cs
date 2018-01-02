@@ -8,9 +8,7 @@ public class enemyBullets : MonoBehaviour {
     public float fireRate;
 
     private float nextFire;
-    bool count = false;
     float timer;
-    int hp;
 
     string bulletColour = "";
 
@@ -34,7 +32,6 @@ public class enemyBullets : MonoBehaviour {
     void Update()
     {
         timer += Time.deltaTime;
-        hp = GetComponentInParent<enemyHealth>().HP;
         if (Time.time > nextFire)   
         {
             nextFire = Time.time + fireRate;

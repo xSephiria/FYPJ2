@@ -23,7 +23,7 @@ public class enemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (spawnedAmount >= totalToSpawn)
+        if (spawnedAmount >= totalToSpawn && playerInfo.Current.enemiesKilledInStage >= spawnedAmount)
         {    
             if (Boss.GetComponent<enemyHealth>().HP > 0)
                 Boss.SetActive(true);
@@ -38,11 +38,7 @@ public class enemySpawner : MonoBehaviour {
                 Instantiate(enemyPrefab, spawn1.position, spawn1.rotation);
                 Instantiate(enemyPrefab, spawn2.position, spawn2.rotation);
                 spawnedAmount += 2;
-                
             }
         }
-        
 	}
-
-
 }
