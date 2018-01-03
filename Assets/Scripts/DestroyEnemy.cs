@@ -12,5 +12,10 @@ public class DestroyEnemy : MonoBehaviour {
             other.GetComponent<enemyHealth>().HP -= bulletDamage;
             gameObject.SetActive(false);
         }
+        else if (other.gameObject.tag == "Boss")
+        {
+            other.GetComponent<bossHealth>().HP -= bulletDamage;
+            gameObject.SetActive(false);
+        }
     }
 }

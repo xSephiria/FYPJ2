@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerInfo : MonoBehaviour {
 
@@ -27,18 +28,35 @@ public class playerInfo : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (isDead)
         {
+            if (remainingLives <= 0)
+                zToRespawn.GetComponentInChildren<Text>().text = "Out of Lives!\nPress Z to return\nto Main Menu";
             zToRespawn.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                playerInfo.Current.isDead = false;
-                player.SetActive(true);
-                Debug.Log("playercontrols");
-                StartCoroutine(Blink(invunerableTime));
+                if (remainingLives > 0)
+                {
+                    isDead = false;
+                    player.SetActive(true);
+                    StartCoroutine(Blink(invunerableTime));
+                    remainingLives -= 1;
+                    Time.timeScale = 1;
+                }
+                else
+                {
+                    remainingLives = 3;
+                    playerScore = 0;
+                    stage1Cleared = false;
+                    stage2Cleared = false;
+                    stage3Cleared = false;
+                    enemiesKilledInStage = 0;
+                    SceneManager.LoadScene("MainMenu");
+                    Time.timeScale = 1;
+                }
             }
         }
         else
@@ -58,10 +76,10 @@ public class playerInfo : MonoBehaviour {
         {
             player.GetComponent<Renderer>().enabled = false;
             playerDeco.GetComponent<Renderer>().enabled = false;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
             player.GetComponent<Renderer>().enabled = true;
             playerDeco.GetComponent<Renderer>().enabled = true;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }   
     }
 }

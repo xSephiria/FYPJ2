@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\DestroyEnemy.cs" />
      <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
      <Compile Include="Assets\Scripts\Stage1BossBullet.cs" />
+     <Compile Include="Assets\Scripts\bossHealth.cs" />
      <Compile Include="Assets\Scripts\bulletMovement.cs" />
      <Compile Include="Assets\Scripts\enemyBulletPool.cs" />
      <Compile Include="Assets\Scripts\enemyBullets.cs" />

@@ -12,7 +12,7 @@ public class Stage1BossBullet : MonoBehaviour {
     void Update()
     {
         timer += Time.deltaTime;
-        hp = GetComponentInParent<enemyHealth>().HP;
+        hp = GetComponentInParent<bossHealth>().HP;
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;

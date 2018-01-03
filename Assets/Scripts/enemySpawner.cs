@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class enemySpawner : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class enemySpawner : MonoBehaviour {
     public Transform spawn2;
     public GameObject enemyPrefab;
     public GameObject Boss;
+    public Slider bossHP;
     public int totalToSpawn = 20;
 
     float timer = 0;
@@ -25,8 +27,11 @@ public class enemySpawner : MonoBehaviour {
 
         if (spawnedAmount >= totalToSpawn && playerInfo.Current.enemiesKilledInStage >= spawnedAmount)
         {    
-            if (Boss.GetComponent<enemyHealth>().HP > 0)
+            if (!playerInfo.Current.stage1Cleared)
+            {
+                bossHP.gameObject.SetActive(true);
                 Boss.SetActive(true);
+            }
             return;
         }
         timer += Time.deltaTime;
