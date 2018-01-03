@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\enemyBulletPool.cs" />
      <Compile Include="Assets\Scripts\enemyBullets.cs" />
      <Compile Include="Assets\Scripts\enemyHealth.cs" />
+     <Compile Include="Assets\Scripts\enemyPathManager.cs" />
      <Compile Include="Assets\Scripts\enemySpawner.cs" />
      <Compile Include="Assets\Scripts\fpsCounter.cs" />
      <Compile Include="Assets\Scripts\killBox.cs" />

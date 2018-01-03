@@ -3,14 +3,25 @@ using System.Collections;
 
 public class moveAlongWaypoint : MonoBehaviour {
 
-    public Transform[] Waypoints;
+    Transform[] Waypoints;
     public float movementSpeed;
     public int currentWaypoint;
     public bool Patrol = true;
     public Vector2 Target;
     public Vector2 moveDirection;
     public Vector2 velocity;
-    
+    public int pathNumber = 1;
+
+    void Start()
+    {
+        Waypoints = new Transform[enemyPathManager.Current.getPath(pathNumber).transform.childCount];
+
+        for (int i = 0; i < enemyPathManager.Current.getPath(pathNumber).transform.childCount; ++i)
+        {
+            Waypoints[i] = enemyPathManager.Current.getPath(pathNumber).transform.GetChild(i);
+        }
+    }
+
     void Update()
     {
         if (currentWaypoint < Waypoints.Length)

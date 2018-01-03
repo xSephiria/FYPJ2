@@ -40,8 +40,10 @@ public class enemySpawner : MonoBehaviour {
             if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + timeBetweenSpawns;
-                Instantiate(enemyPrefab, spawn1.position, spawn1.rotation);
-                Instantiate(enemyPrefab, spawn2.position, spawn2.rotation);
+                GameObject temp = Instantiate(enemyPrefab, spawn1.position, spawn1.rotation) as GameObject;
+                temp.GetComponent<moveAlongWaypoint>().pathNumber = 1;
+                temp = Instantiate(enemyPrefab, spawn2.position, spawn2.rotation) as GameObject;
+                temp.GetComponent<moveAlongWaypoint>().pathNumber = 2;
                 spawnedAmount += 2;
             }
         }
